@@ -43,3 +43,29 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Android
+android/.gradle/
+android/app/build/
+android/local.properties
+android/app/.cxx/
+*.apk
+*.ap_
+
+# iOS
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Gerais de Flutter
+.packages
+build/
+
+# Outros arquivos comuns
+*.lock
+*.DS_Store
