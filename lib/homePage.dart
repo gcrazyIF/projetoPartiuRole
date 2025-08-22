@@ -26,21 +26,6 @@ class _HomePageState extends State<HomePage> {
       child: ListView(
         children: [
           Container(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ClipRRect(
-                  child: Image.network(
-                    'https://static.vecteezy.com/system/resources/previews/019/879/186/large_2x/user-icon-on-transparent-background-free-png.png', width: 40, height: 40,
-                  ),
-                ),
-                Text('Username'),
-                SizedBox(width: 7),
-                Icon(Icons.circle, color: Color(0xFF21D375), size: 4),
-              ],
-            ),
-          ),
-          Container(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,13 +66,13 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 100),
           GridView(
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              crossAxisSpacing: 20,
+              crossAxisSpacing: 5,
               mainAxisSpacing: 5,
             ),
             children: [

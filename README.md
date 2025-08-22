@@ -1,6 +1,8 @@
 # projeto_appviagens
 
-Projeto de aplicativo de viagens para a disciplina de PMOVEL.
+Este é um projeto de um aplicativo de planejamento e gerenciamento de viagens, executado por um grupo de estudantes
+de informática e, portanto, não se recomenda confiar na estabilidade ou na usabilidade desse código para parâmetros
+profissionais ou acadêmicos, a não ser sob caráter de pesquisa (artigos, ensaios acadêmicos e obras de feitio parecido).
 
 ## Getting Started
 
