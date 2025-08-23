@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.8
   google_fonts:
   font_awesome_flutter:
+  flutter_rating_stars: ^1.1.0
+  sqflite:
+  path:
 
 dev_dependencies:
   flutter_test:

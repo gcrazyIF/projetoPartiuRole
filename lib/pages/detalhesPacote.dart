@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'homePage.dart';
+import 'discoverPage.dart';
 
 class DetalhesPacote extends StatefulWidget {
   const DetalhesPacote({super.key});
@@ -21,7 +21,7 @@ class _DetalhesPacoteState extends State<DetalhesPacote> {
           leading: IconButton(
             icon: Icon(Icons.arrow_back_ios_rounded),
             onPressed:(){
-              Navigator.pop(context, MaterialPageRoute(builder: (_) => HomePage()));
+              Navigator.pop(context, MaterialPageRoute(builder: (_) => DiscoverPage()));
             },
           ),
           title: Text(''),

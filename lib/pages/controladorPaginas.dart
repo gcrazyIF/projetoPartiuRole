@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
-import 'homePage.dart';
+import 'discoverPage.dart';
 import 'detalhesPacote.dart';
 
 class ControlePages extends StatefulWidget{
@@ -15,7 +15,7 @@ class _ControlePagesState extends State<ControlePages> {
   int selectedIndex = 0;
 
   var pages = [
-    HomePage(),
+    DiscoverPage(),
     Center(child: Text('Página 2', style: TextStyle(fontSize: 30))),
     Center(child: Text('Página 3', style: TextStyle(fontSize: 30))),
     Center(child: Text('Página 4', style: TextStyle(fontSize: 30))),
@@ -60,16 +60,17 @@ class _ControlePagesState extends State<ControlePages> {
 
   buildBottomNavBar(){
     return BottomNavigationBar(
-      backgroundColor: Colors.green[900],
-      items: const <BottomNavigationBarItem>[
+      backgroundColor: Colors.green.shade900,
+      type: BottomNavigationBarType.fixed,
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Cronograma'),
         BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Favoritos"),
         BottomNavigationBarItem(icon: Icon(Icons.person), label: "Perfil"),
       ],
       currentIndex: selectedIndex,
-      selectedItemColor: Colors.white,
-      unselectedItemColor: Colors.white54,
+      selectedItemColor: Colors.green,
+      unselectedItemColor: Colors.white70,
       onTap: (index){
         setState((){
           selectedIndex = index;
