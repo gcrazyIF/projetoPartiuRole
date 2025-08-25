@@ -12,6 +12,7 @@ class ControlePages extends StatefulWidget{
 }
 
 class _ControlePagesState extends State<ControlePages> {
+  bool mostrarAcoes = false;
   int selectedIndex = 0;
 
   var pages = [
@@ -27,10 +28,93 @@ class _ControlePagesState extends State<ControlePages> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: buildAppBar(),
-        body: pages[selectedIndex],
+        body: Stack(
+         children: [
+           pages[selectedIndex],
+           if(mostrarAcoes)
+             GestureDetector(
+              onTap:(){
+                setState(() {
+                  mostrarAcoes = false;
+                });
+              },
+              child: Container(
+                color: Colors.black.withOpacity(0.5),
+                child: Column(
+                  spacing: 25.0,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      spacing: 25.0,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: (){},
+                          child: Icon(Icons.edit_calendar_rounded, color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(50, 50),
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.green[600],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: (){},
+                          child: Icon(Icons.attach_money_rounded, color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(50, 50),
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.green[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      spacing: 25.0,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                          onPressed: (){},
+                          child: Icon(Icons.comment_rounded, color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(50, 50),
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.green[600],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: (){},
+                          child: Icon(Icons.search_rounded, color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(50, 50),
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.green[600],
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: (){},
+                          child: Icon(Icons.account_circle_rounded, color: Colors.white),
+                          style: ElevatedButton.styleFrom(
+                            minimumSize: Size(50, 50),
+                            shape: CircleBorder(),
+                            backgroundColor: Colors.green[600],
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 55),
+                  ],
+                ),
+              ),
+             ),
+         ],
+        ),
         bottomNavigationBar: buildBottomNavBar(),
         floatingActionButton: new FloatingActionButton(
-          onPressed: (){},
+          onPressed: (){
+            setState(() {
+              mostrarAcoes = true;
+            });
+          },
           child: Icon(Icons.add, color: Colors.white),
           backgroundColor: Colors.green,
           elevation: 3.0,
@@ -79,54 +163,4 @@ class _ControlePagesState extends State<ControlePages> {
     );
   }
 
-  buildCard({required String imageLink, required String nomePacote, required double nota,required String dataEstadia, required String preco}){
-    return Card(
-      color: Colors.white70,
-      child: GestureDetector(
-        onTap:(){
-          Navigator.push(context, MaterialPageRoute(builder: (_) => DetalhesPacote()));
-        },
-        child: Column(
-          children: [
-            ClipRRect(
-              clipBehavior: Clip.hardEdge,
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.network(
-                imageLink,
-                fit: BoxFit.cover,
-              ),
-            ),
-            SizedBox(height: 5),
-            Padding(
-              padding: EdgeInsetsGeometry.all(5.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      Text(nomePacote, style: TextStyle(fontSize: 10)),
-                      SizedBox(width: 5),
-                      RatingStars(
-                        value: nota,
-                        starColor: Colors.green,
-                        starOffColor: Colors.white10,
-                        starCount: 5,
-                        starSize: 20,
-                        maxValue: 5,
-                        starSpacing: 2,
-                        maxValueVisibility: true,
-                        valueLabelVisibility: false,
-                      ),
-                    ],
-                  ),
-                  Text(dataEstadia),
-                  Text(preco, style: TextStyle(fontWeight: FontWeight.w700)),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }

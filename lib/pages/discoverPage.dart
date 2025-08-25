@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'controladorPaginas.dart';
 import 'detalhesPacote.dart';
 import 'package:projeto_appviagens/db/cardsPacotesAtb_dao.dart';
 import 'package:projeto_appviagens/widgets/cardPacote.dart';
@@ -101,55 +100,4 @@ class _DiscoverPageState extends State<DiscoverPage> {
       ),
     );
   }
-
-  buildCard(String imageLink){
-    return Card(
-      color: Colors.white70,
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(17.0)
-      ),
-      child: GestureDetector(
-        onTap: (){
-          Navigator.push(context, MaterialPageRoute(builder: (_) => DetalhesPacote()));
-        },
-        child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.network(
-            imageLink, fit: BoxFit.cover,
-          ),
-          SizedBox(height: 5),
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children:[
-                buildText(text: 'Professional Host', fontSize: 10.0),
-                buildText(text: '18 - 23 Dec', fontSize: 10.0),
-                buildText(
-                  text: '\$1,065 total',
-                  color: Colors.black,
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.w600,
-                ),
-              ],
-            ),
-          ),
-        ],
-        ),
-    )
-    );
-  }
-
-  buildText({required text, color, fontSize, fontWeight}) {
-    return Text(
-      text,
-      style: GoogleFonts.inter(
-        color: color,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-      ),
-    );
-  }
-
 }

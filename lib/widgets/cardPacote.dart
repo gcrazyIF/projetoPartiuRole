@@ -29,7 +29,7 @@ class _CardPacoteState extends State<CardPacote> {
       color: Colors.white70,
       child: GestureDetector(
         onTap:(){
-          Navigator.push(context, MaterialPageRoute(builder: (_) => DetalhesPacote()));
+          Navigator.push(context, MaterialPageRoute(builder: (_) => DetalhesPacote(cardPacoteAtb: cardPacoteAtb)));
         },
         child: Column(
           children: [
